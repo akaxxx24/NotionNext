@@ -4,6 +4,8 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import NotionIcon from './NotionIcon'
 
+import Image from 'next/image'
+
 /**
  * 博客卡牌
  * @param {*} param0
@@ -28,6 +30,17 @@ const BlogPostCard = ({ post, className }) => {
       <div
         key={post.id}
         className={`${className} h-full rounded-2xl p-4 dark:bg-neutral-800 cursor-pointer bg-white hover:bg-white dark:hover:bg-gray-800 ${currentSelected ? 'bg-green-50 text-green-500' : ''}`}>
+        {/* Display the cover image if available */}
+        {post.pageCover && (
+          <div className="w-full h-48 overflow-hidden rounded-t-xl">
+            <Image
+              src={post.pageCover}
+              alt={`Cover Image for ${post.title}`}
+              layout='fill' // or you could use width and height
+              objectFit='cover'
+            />
+          </div>
+        )}
         <div className='stack-entry w-full flex space-x-3 select-none dark:text-neutral-200'>
           {siteConfig('POST_TITLE_ICON') && (
             <NotionIcon
