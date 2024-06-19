@@ -126,13 +126,9 @@ const LayoutBase = props => {
             <div className='hidden md:block w-full top-0 left-5 md:left-4 z-40 pt-3 md:pt-4'>
               <LogoBar {...props} />
             </div>
-            <div className='main-menu z-20 pl-9 pr-7 pb-5 sticky pt-1 top-20 overflow-y-scroll h-fit max-h-full scroll-hidden bg-white dark:bg-neutral-800 rounded-xl '>
-              {/* SocialButton 组件 */}
-              <SocialButton />
-              
+            <div className='main-menu z-20 pl-9 pr-7 pb-5 sticky pt-1 top-20 overflow-y-scroll h-fit max-h-full scroll-hidden bg-white dark:bg-neutral-800 rounded-xl '>              
               {/* 嵌入 */}
               {slotLeft}
-
               <div className='grid pt-2'>
                 {/* 显示菜单 */}
                 {links &&
@@ -140,6 +136,8 @@ const LayoutBase = props => {
                     <MenuItem key={index} link={link} />
                   ))}
               </div>
+              {/* SocialButton 组件 */}
+              <SocialButton />
             </div>
 
             {/* 页脚站点信息 */}
