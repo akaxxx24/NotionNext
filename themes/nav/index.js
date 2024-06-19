@@ -34,6 +34,7 @@ import PageNavDrawer from './components/PageNavDrawer'
 import TagItemMini from './components/TagItemMini'
 import TocDrawer from './components/TocDrawer'
 import TopNavBar from './components/TopNavBar'
+import SocialButton from './components/SocialButton'
 import CONFIG from './config'
 import { Style } from './style'
 
@@ -126,6 +127,9 @@ const LayoutBase = props => {
               <LogoBar {...props} />
             </div>
             <div className='main-menu z-20 pl-9 pr-7 pb-5 sticky pt-1 top-20 overflow-y-scroll h-fit max-h-full scroll-hidden bg-white dark:bg-neutral-800 rounded-xl '>
+              {/* SocialButton 组件 */}
+              <SocialButton />
+              
               {/* 嵌入 */}
               {slotLeft}
 
